@@ -453,3 +453,1252 @@ input[type=search] {
     margin: 6px 0;
 }
 
+/*** project panel  ***/
+.project-panel {
+   position: fixed;
+    width: 350px;
+    top: 113px;
+    right: 360px;
+    bottom: 0;
+    z-index: 50;
+    background-color: #fafafa;
+    -webkit-transition: transform 218ms ease;
+    transition: transform 218ms ease;
+    -webkit-transform: translate(360px);
+    transform: translate(360px);
+    box-shadow: -3px 0 3px rgba(0,0,0,.1);
+    overflow: hidden;
+}
+
+.scrum-pannel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+section {
+    display: block;
+}
+
+.scrum-pannel .scrum-pannel-header {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    z-index: 2;
+}
+
+.scrum-pannel .scrum-pannel-header>a.filter-clear-handler {
+    left: 15px;
+}
+.scrum-pannel .scrum-filter-wrap .filter-clear-handler {
+    display: none;
+    color: #03a9f4;
+    font-size: 14px;
+}
+.scrum-pannel .scrum-pannel-header>a {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.scrum-pannel .scrum-pannel-header .title {
+    padding: 0 15px;
+    color: #383838;
+    font-size: 15px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.scrum-pannel .scrum-filter-wrap .filter-input-wrap {
+    margin: 15px;
+    position: relative;
+}
+
+input.form-control {
+    height: 40px;
+    line-height: 26px;
+}
+input.form-control, textarea.form-control {
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    line-height: 20px;
+}
+
+.form-control {
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.list {
+    padding: 0;
+    list-style: none;
+}
+
+.list>li {
+    position: relative;
+    line-height: 30px;
+}
+
+li {
+    line-height: 20px;
+    list-style: none;
+}
+
+.scrum-pannel .scrum-filter-executors .member {
+    max-width: 100%;
+    padding: 5px 40px 5px 20px;
+    line-height: 24px;
+}
+.list>li:first-child>a {
+    margin-top: 5px;
+}
+
+.list>li>a {
+    display: block;
+    cursor: pointer;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scrum-pannel .scrum-filter-executors .avatar {
+    float: left;
+}
+.list>li>a>.avatar, .list>li>a>.icon {
+    margin-right: 10px;
+}
+
+.no-avatar {
+    background-image: url('./images/nobody-avator.png') !important;
+}
+.avatar {
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    background-position: 50%!important;
+    background-image: url('./images/uxceo-128.png');
+}
+
+.img-24, .img-36 {
+    display: inline-block;
+    background-color: #eee;
+}
+.img-24 {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+}
+.img-circle {
+    border-radius: 50%;
+}
+
+.scrum-pannel .scrum-filter-done-wrap {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(0,0,0,.07);
+    border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+.scrum-pannel .scrum-filter-done-wrap .filter-done-handler, .scrum-pannel .scrum-filter-done-wrap .filter-done-handler:hover {
+    color: gray;
+}
+a, a:focus, a:hover {
+    text-decoration: none;
+}
+
+.scrum-pannel .check-box {
+    margin: 2px 10px 0 0;
+    width: 16px;
+    height: 16px;
+    float: left;
+    line-height: 16px;
+    text-align: center;
+    border: 2px solid #b3b3b3;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.pull-left {
+    float: left!important;
+}
+
+.scrum-pannel .scrum-filter-today-wrap {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+.scrum-pannel .scrum-filter-today-wrap .filter-today-handler, .scrum-pannel .scrum-filter-today-wrap .filter-today-handler:hover {
+    color: gray;
+}
+
+.scrum-pannel .check-box {
+    margin: 2px 10px 0 0;
+    width: 16px;
+    height: 16px;
+    float: left;
+    line-height: 16px;
+    text-align: center;
+    border: 2px solid #b3b3b3;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.scrum-pannel .member-bar-input-wrap {
+    margin: 15px;
+}
+
+.members-list {
+    padding: 0 0 15px;
+}
+
+.members-list .member {
+    height: 50px;
+    padding: 7px 12px 3px 61px;
+}
+
+.members-list .add-members-handler .add-members {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 15px;
+    line-height: 36px;
+}
+
+.img-icon {
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 80px 40px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABQCAYAAACeXX40AAAAAXNSR…1QS/9KBkoGSgZKBkoGSgZKBkoGSgZKBkoGSgZKBvLDwP8BPGQwL+AAKnoAAAAASUVORK5CYII=);
+}
+
+.member-bar-view .add-members-handler .add-member-icon {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    color: #03a9f4;
+    font-size: 36px;
+    text-align: center;
+}
+.img-icon-circle-cross-36 {
+    width: 36px;
+    height: 36px;
+    background-position: -41px -1px;
+}
+.img-icon {
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 80px 40px;
+    background-image: url(https://dn-st.teambition.net/teambition/images/icons@2x.2665182a.png);
+}
+
+.member-bar-view .add-members-handler .add-members-p {
+    color: #03a9f4;
+    line-height: 40px;
+}
+
+.member-bar-view .member {
+    height: 50px;
+    padding: 7px 12px 3px 61px;
+}
+
+.member-bar-view .avatar {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 15px;
+    line-height: 36px;
+}
+
+.member-bar-view .member-info {
+    height: 40px;
+}
+
+.member-bar-view .member-name, .member-bar-view .member-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.member-bar-view .member-name, .member-bar-view .member-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.member-bar-view .member-title {
+    font-size: 12px;
+}
+.muted {
+    color: #a6a6a6;
+    font-weight: 400;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.member-bar-view .avatar .never-visit {
+    position: absolute;
+    line-height: 1;
+    font-size: 12px;
+    color: #a6a6a6;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    bottom: -1px;
+    right: -1px;
+    width: 14px;
+    height: 14px;
+}
+
+.member-bar-view .member:hover {
+    background-color:#eee;
+    cursor:pointer
+}
+
+
+/******* menu panel  *****/
+.activity-panel-body {
+    position: absolute;
+    top: 50px;
+    width: 350px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.activity-panel-all .project-menus {
+    position: relative;
+    padding-bottom: 1px;
+}
+
+.list>li {
+    position: relative;
+    line-height: 30px;
+}
+
+.activity-panel-all .activities-panel-menu-list>li>a {
+    color: #383838;
+    font-weight: 600;
+}
+.list>li:first-child>a {
+    margin-top: 5px;
+}
+.list>li:first-child>a {
+    margin-top: 5px;
+}
+.list>li>a {
+    display: block;
+    cursor: pointer;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: gray;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.activity-card {
+    position: relative;
+    line-height: 20px;
+    padding: 15px;
+    padding-bottom: 0;
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-top: 9px;
+}
+
+.activity-card-datas.activity-card:first-child {
+    margin-top: 5px;
+}
+.activity-card:first-child {
+    margin-top: 0;
+}
+.activity-card-datas {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+
+.activity-card .activity-card-header {
+    position: relative;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+    margin-right: 10px;
+}
+
+.activity-card-datas .activity-card-header {
+    display: block;
+    float: none;
+    margin-bottom: 0;
+    font-weight: 600;
+    line-height: 35px;
+}
+
+.activity-card .activity-card-header i:first-child {
+    left: 0;
+}
+.activity-card .activity-card-header i.icon-alert-clock {
+    color: gray;
+}
+.activity-card-datas .activity-card-header i {
+    position: absolute;
+}
+.activity-card .activity-card-header i {
+    text-align: center;
+    display: block;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    z-index: 2;
+}
+
+.activity-card-datas .activity-card-header .activity-card-title {
+    line-height: 24px;
+    margin-bottom: 0;
+}
+.activity-card .activity-card-header .activity-card-title {
+    padding-left: 34px;
+    z-index: 1;
+    word-break: break-all;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.activity-card-datas .dataStatistics {
+    padding-bottom: 10px;
+    font-size: 0;
+}
+
+.activity-card-datas .dataStatistics>div {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 145px;
+    margin-left: 29px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.activity-card-datas .dataStatistics .unassignedtasks-number {
+    color: #7fd112;
+    font-size: 24px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.activity-card-datas .dataStatistics .activity-link-today {
+    margin-left: 0;
+}
+
+.activity-card-datas .dataStatistics .todayDatas-number {
+    color: #ff9800;
+    font-size: 24px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.activity-card-table.activity-card {
+    margin: 0 15px;
+    padding: 0;
+    padding-bottom: 15px;
+}
+.activity-card:first-child {
+    margin-top: 0;
+}
+.activity-card {
+    position: relative;
+    line-height: 20px;
+    padding: 15px;
+    padding-bottom: 0;
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-top: 9px;
+}
+
+.activity-card-table .activity-card-header {
+    display: block;
+    float: none;
+}
+
+.activity-card-table .activity-card-header .activity-card-title {
+    margin-bottom: 0;
+}
+.activity-card .activity-card-header .activity-card-title {
+    padding-left: 34px;
+    z-index: 1;
+    word-break: break-all;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.activity-card-table .activity-card-body {
+    display: block;
+    margin-left: 34px;
+    margin-right: 0;
+    background-color: #fff;
+}
+.activity-card .activity-card-body {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+
+.activity-card-table .activity-table-chart {
+    position: relative;
+    min-height: 100px;
+    text-align: center;
+}
+
+.activity-card-table .activity-card-body .tasks-chart-view {
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+.tasks-chart-view {
+    position: relative;
+    height: 100px;
+    z-index: 1;
+}
+
+.tasks-chart-view svg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.tasks-chart-view .point.show {
+    opacity: 1;
+}
+.tasks-chart-view .point {
+    opacity: 0;
+    transition: opacity .3s;
+}
+.show {
+    display: block!important;
+}
+
+.tasks-chart-view .chart-hint {
+    position: absolute;
+    display: none;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 3px;
+    opacity: .8;
+    transition: .3s;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tasks-chart-view .chart-hint p {
+    margin: 4px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: left;
+}
+
+.tasks-chart-view .chart-hint p:nth-child(2) {
+    color: #03a9f4;
+}
+
+.tasks-chart-view .chart-hint p:nth-child(3) {
+    color: #259b24;
+}
+
+.activity-panel-all .activity-panel-activities-list .activity-panel-activities-title {
+    position: relative;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 5px;
+}
+
+.activity-panel-all .activity-panel-activities-list .activity-panel-activities-title .project-activies-title {
+    color: #383838;
+    padding: 5px 15px;
+    font-weight: 600;
+}
+
+.activity-panel-all .activity-panel-activities-list .activity-panel-activities-title .project-activies-title>.icon {
+    color: gray;
+    float: left;
+    position: absolute;
+}
+
+.activity-panel-all .activity-panel-activities-list .activity-panel-activities-title .project-activies-title .activity-card-title {
+    padding-left: 34px;
+    display: inline-block;
+    line-height: 24px;
+}
+
+.activity-panel-activities .activities-header {
+    display: none;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    padding-bottom: 15px;
+    padding-top: 13px;
+}
+
+.activity-panel-activities .activities-header header {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.activity-panel-activities .activities-header .close-handler {
+    top: 11px;
+}
+a.icon {
+    color: #a6a6a6;
+    -webkit-transition: color 218ms ease;
+    transition: color 218ms ease;
+}
+
+.activity-card:first-child {
+    margin-top: 0;
+}
+
+.activity-card .activity-card-header i:last-child {
+    right: 0;
+}
+.activity-card .activity-card-header i:first-child {
+    left: 0;
+}
+
+
+.activity-card .activity-content {
+    overflow: hidden;
+    padding-bottom: 5px;
+    color: #383838;
+}
+
+.activity-card .activity-content .activity-card-title {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+.activity-card .activity-card-body {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+
+.activity-card .activity-content {
+    overflow: hidden;
+    padding-bottom: 5px;
+    color: #383838;
+}
+
+.activity-card-common .activity-title {
+    margin: 0;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+.activity-card-common .activity-title, .activity-card .activity-second-title>section {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.activity-card .activity-card-footer {
+    margin-bottom: 5px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.activity-card .activity-card-footer time {
+    color: gray;
+    font-size: 12px;
+    float: left;
+}
+
+.activity-card-datas .dataStatistics:after {
+    position: absolute;
+    left: 49px;
+    right: 15px;
+    bottom: 1px;
+    content: ' ';
+    height: 1px;
+    background-color: rgba(0,0,0,.06);
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.activity-panel-body>div {
+    width: 350px;
+
+}
+
+.activity-card-datas .dataStatistics>div:hover {
+    background-color: #eee;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+    background-color: #a6a6a6;
+    border-left: 2px solid transparent;
+}
+
+.thin-scroll::-webkit-scrollbar {
+    width: 7px;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+    background-color: #d9d9d9;
+    border-left: 2px solid transparent;
+}
+
+
+
+/******* board view  *******/
+.board-view {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-transition: all 218ms ease;
+    transition: all 218ms ease;
+}
+
+.fade.in {
+    opacity: 1;
+}
+
+.board-scrum-view {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    border: 0 solid #d9d9d9;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+.board-scrum-stages {
+    position: relative;
+    padding: 10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+
+.scrum-stage {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    height: 100%;
+    width: 280px;
+    vertical-align: top;
+    border: 1px solid rgba(0,0,0,.12);
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+.sortable .scrum-stage .scrum-stage-header {
+    cursor: move;
+}
+
+.scrum-stage .scrum-stage-header {
+    position: absolute;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    padding: 10px 30px 9px 15px;
+    font-size: 15px;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.scrum-stage .scrum-stage-header .stage-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.scrum-stage .scrum-stage-header .icon-tick {
+    margin-right: 8px;
+}
+
+.scrum-stage .scrum-stage-header .icon-chevron-right, .scrum-stage .scrum-stage-header .icon-tick {
+    display: none;
+    opacity: .4;
+    font-size: 12px;
+}
+
+.scrum-stage .stage-menu-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: gray;
+    z-index: 1;
+    -webkit-transition: color 218ms ease;
+    transition: color 218ms ease;
+}
+
+.scrum-stage.fixed-creator .scrum-stage-wrap.hidden-creator {
+    padding-bottom: 40px;
+}
+
+.scrum-stage .scrum-stage-wrap {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.scrum-stage .scrum-stage-content {
+    position: static;
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: visible;
+}
+
+.scrum-stage .scrum-stage-tasks, .scrum-stage .scrum-stage-tasks-done {
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.scrum-stage.fixed-creator .scrum-stage-wrap.hidden-creator .task-creator-handler-wrap {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    box-shadow: 0 7px 21px rgba(0,0,0,.1);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.scrum-stage .hidden-creator .task-creator-handler-wrap {
+    display: block;
+}
+
+.scrum-stage .task-creator-handler-wrap {
+    display: none;
+    width: 100%;
+}
+
+.scrum-stage .task-creator-handler-wrap .task-creator-handler {
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 15px;
+}
+
+.link-add-handler {
+    color: #03a9f4!important;
+    -webkit-transition: color 218ms ease;
+    transition: color 218ms ease;
+}
+
+.scrum-stage .task-creator-handler-wrap .task-creator-handler .icon-plus-sign {
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.icon-plus-sign:before {
+    content: "\C004";
+}
+
+.scrum-stage-wrap.hidden-creator .task-creator-handler-wrap {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    box-shadow: 0 7px 21px rgba(0,0,0,.1);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.scrum-stage .hidden-creator .task-creator-handler-wrap {
+    display: block;
+}
+
+.scrum-stage .task-creator-handler-wrap {
+    display: none;
+    width: 100%;
+}
+
+/******** task item *******/
+.board-scrum-view .task:hover, .task.clone-from-scrum:hover {
+    border-color: rgba(0,0,0,.12);
+}
+
+.board-scrum-view .task, .task.clone-from-scrum {
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-style: solid;
+    border-color: rgba(0,0,0,.12);
+    border-width: 1px 0;
+}
+
+.task {
+    position: relative;
+    white-space: normal;
+}
+
+.task-priority {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.task-priority-0 .task-priority-hint {
+    background-color: #d9d9d9;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.task-priority-hint {
+    display: block;
+    width: 10px;
+    height: 100%;
+    -webkit-transition: opacity 218ms ease-in,background-color 218ms ease-in;
+    transition: opacity 218ms ease-in,background-color 218ms ease-in;
+}
+
+.task .check-box {
+    float: left;
+    margin: 10px 10px 10px 20px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #b3b3b3;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.task .check-box .icon-tick {
+    visibility: hidden;
+    color: #b3b3b3;
+    font-size: 13px;
+    -webkit-transform: translate(2px,-1px);
+    transform: translate(2px,-1px);
+}
+
+.board-scrum-view .task .task-content-set, .task.clone-from-scrum .task-content-set {
+    min-height: 40px;
+    margin-right: 10px;
+}
+.task .task-content-set {
+    margin-left: 50px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.task .avatar {
+    float: left;
+    margin-top: -2px;
+    -webkit-transition: -webkit-transform 218ms ease-in-out;
+    transition: -webkit-transform 218ms ease-in-out;
+}
+
+.task .task-content-wrapper {
+    position: relative;
+    margin-left: 34px;
+    padding-right: 15px;
+}
+
+.board-scrum-view .task .task-content-set .task-content, .task.clone-from-scrum .task-content-set .task-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0 none;
+    background: none;
+    cursor: pointer;
+}
+.task .task-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 0 none;
+    background: none;
+    cursor: pointer;
+    word-wrap: break-word;
+    -webkit-transition: color 218ms ease;
+    transition: color 218ms ease;
+}
+
+.task .task-info-wrapper {
+    margin-top: 5px;
+}
+
+.task .task-info-wrapper .label {
+    float: left;
+    margin: 5px 5px 0 0;
+    line-height: 15px;
+}
+
+.label {
+    font-weight: 400;
+    border-radius: 2px;
+}
+
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.task .task-info-wrapper .icon {
+    float: left;
+    margin-right: 5px;
+}
+
+.tag {
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.badge, .label {
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 14px;
+    color: gray;
+    vertical-align: baseline;
+    white-space: nowrap;
+    background-color: #e1e1e1;
+}
+
+.label {
+    font-weight: 400;
+    border-radius: 2px;
+    height: 21px;
+}
+
+.label i {
+    font-size: 17px;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.label-info {
+    background-color: #03a9f4;
+}
+.badge-info, .label-info {
+    color: #fff;
+    background-color: #03a9f4;
+}
+
+.badge-important, .label-important {
+    color: #fff;
+    background-color: #ff3c00;
+}
+
+.tag i {
+    font-size: 7px;
+    vertical-align: bottom;
+    margin-right: 5px;
+}
+
+.open .task-priority-0 .task-priority-hint, .task-priority-0 .task-priority-hint:hover {
+    background-color: #b3b3b3;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.task:hover .task-priority-0 {
+    background-color: #d9d9d9;
+}
+
+.task-priority-1 .task-priority-hint {
+    background-color: #ff9800;
+}
+
+.open .task-priority-1 .task-priority-hint, .task-priority-1 .task-priority-hint:hover {
+    background-color: #b36a00;
+}
+
+.open .task-priority-2 .task-priority-hint, .task-priority-2 .task-priority-hint:hover {
+    background-color: #b32a00;
+}
+
+.task-priority-2 .task-priority-hint {
+    background-color: #ff3c00;
+}
+
+.stage-name i {
+    vertical-align: bottom;
+}
+
+.workflow-mode .scrum-stage .scrum-stage-header .icon-chevron-right {
+    display: inline;
+}
+
+.stage-menu-toggler i {
+    margin-top: 14px;
+    font-size: 20px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.stage-menu-toggler i:hover {
+    color: #03a9f4;
+}
+
+.task-creator-handler i {
+    font-size: 22px;
+    position: relative;
+    top: 6px;
+}
+
+.scrum-stage:last-child {
+    margin-right: 0;
+}
+.stage-add-view {
+    height: auto;
+}
+
+.stage-add-view .handler-wrap a {
+    color: #a6a6a6;
+    display: block;
+    padding: 10px;
+}
+
+.stage-add-view .handler-wrap a i {
+    float: left;
+    margin-right: 7px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.stage-add-view .creator-wrap {
+    padding: 10px;
+}
+
+.stage-add-view .stage-name {
+    margin-bottom: 10px;
+    border-color: rgba(0,0,0,.1);
+}
+
+.stage-add-view .buttons {
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #383838;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    background-color: #fff;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+}
+
+.btn-link {
+    color: gray;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.btn-link, .btn-link:active, .btn-link[disabled], fieldset[disabled] .btn-link {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.btn-link, .btn-link:active, .btn-link:focus, .btn-link:hover {
+    border-color: transparent;
+}
+
+.stage-add-view .btn {
+    padding: 8px 21px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #03a9f4;
+    border-color: #03a9f4;
+}
+
+.stage-add-view .btn.btn-primary {
+    color: #fff;
+}
+
+.btn-link:hover{
+    color:#03a9f4;
+    text-decoration:none;
+    background-color:transparent;
+}
