@@ -3,7 +3,6 @@
  */
 
 import React from 'react';
-import { Draggable } from 'react-drag-and-drop'
 
 var CardItem = React.createClass ({
     getInitialState: function() {
@@ -13,7 +12,6 @@ var CardItem = React.createClass ({
     },
     render: function() {
         return (
-            <Draggable type="fruit" data={this.state.data.content}>
             <li className="task ui-sortable-handle">
                 <div className="task-priority task-priority-0">
                     <a className="task-priority-hint"></a>
@@ -51,7 +49,6 @@ var CardItem = React.createClass ({
                     </div>
                 </div>
             </li>
-                </Draggable>
         )
     }
 });

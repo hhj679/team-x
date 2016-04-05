@@ -1,60 +1,29 @@
-/**
- * Created by Administrator on 2016/3/31.
- */
-import React  from 'react'
-import { Draggable, Droppable } from 'react-drag-and-drop'
+import React from 'react';
+import Sortable from 'react-sortablejs';
 
-class Demo extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            draggable : ['drag','us','plz'],
-            dropped   : '',
-            hovering  : false
-        }
-    }
+const sortableOptions = {
+    ref: 'list',
+    model: 'item',
+    group: 'shared'
+};
+
+var SimpleList = React.createClass({
+    getInitialState: function() {
+        return {
+            item: this.props.items2
+        };
+    },
     render() {
-        let draggable = this.state.draggable.map((title, index) => {
-            return (
-                <li key={title}>
-                    <Draggable type="yolo" data={title}>{title}</Draggable>
-                </li>
-            )
-        })
-        let droppableStyle = {
-            height : '200px'
-        }
-        if (this.state.hovering) droppableStyle.backgroundColor = 'pink'
+        const items1 = this.state.item.map((text, index) => (
+            <li key={index}>{text}</li>
+        ));
+
         return (
             <div>
-                <ul>{draggable}</ul>
-                <div style={{border:'1px solid red', width:'200px',height:'200px', position:'relative'}}>
-                    <span style={{position:'absolute',float:'left'}}>Drop zone...</span>
-                    <Droppable
-                        types={['yolo']}
-                        style={droppableStyle}
-                        onDrop={this.onDrop.bind(this)}
-                        onDragEnter={this.onDragEnter.bind(this)}
-                        onDragLeave={this.onDragLeave.bind(this)}>
-                        <div style={{textAlign:'center', lineHeight:'100px'}}>{this.state.dropped}</div>
-                    </Droppable>
-                </div>
+                <ul ref="list">{items1}</ul>
             </div>
-        )
+        );
     }
-    onDragEnter() {
-        this.setState({ hovering : true })
-    }
-    onDragLeave() {
-        this.setState({ hovering : false })
-    }
-    onDrop(e) {
-        this.setState({ hovering : false, dropped : e.yolo })
-        clearTimeout(this.dropTimeout)
-        this.dropTimeout = setTimeout(() => {
-            this.setState({ dropped : '' })
-        },1500)
-    }
-}
+});
 
-export  default Demo;
+export default Sortable(sortableOptions)(SimpleList);

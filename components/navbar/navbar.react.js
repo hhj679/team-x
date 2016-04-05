@@ -8,13 +8,11 @@ import FloatingActionButton from 'material-ui/lib/floating-action-button';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import Avatar from 'material-ui/lib/avatar';
 
-import { Droppable } from 'react-drag-and-drop'
+import ListPanel from '../board/board.react.js'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'material-design-icons/iconfont/material-icons.css'
 import './style.css';
-
-import CardItem from '../card/card.react';
 
 var project1_logo = {
     "backgroundImage": "url(images/cover-other.jpg)"
@@ -356,114 +354,6 @@ var SubBar = React.createClass({
                 </Navbar.Collapse>
             </Navbar>
         )
-    }
-});
-
-var ListPanel = React.createClass ({
-    getInitialState: function() {
-        return {
-            list:  null
-        };
-    },
-    componentDidMount: function() {
-        var that = this;
-        $.get(this.props.source, function(result) {
-            if (result[0] && result[0]._id) {
-                $.get('/testData/stages_' + result[0]._id + '.json', function(sresult) {
-                    if(sresult && sresult.length>0) {
-                        that.setState({
-                            list: sresult
-                        });
-
-                        var stageItems = [];
-                        sresult.map(function(item) {
-                            $.get('/testData/' + item._id + '.json', function(ssr) {
-                                if(ssr && ssr.length>0) {
-                                    stageItems[item._id] = ssr;
-                                    that.setState({
-                                        stageItems: stageItems
-                                    });
-                                }
-                            }.bind(that));
-                        });
-                    }
-                }.bind(that));
-            }
-        }.bind(this));
-    },
-    render: function () {
-        var that = this;
-        var xml = <li className="scrum-stage toggler-parent stage-add-view">
-                <div className="handler-wrap">
-                    <a className="expand-creator-handler">
-                        <i className="material-icons">control_point</i>新建任务阶段...
-                    </a>
-                </div>
-                <div className="creator-wrap hidden">
-                    <input type="text" placeholder="新建任务阶段..." className="form-control stage-name"/>
-                    <div className="buttons"><a className="btn btn-link contract-creator-handler">取消</a>
-                        <a className="btn btn-primary submit-add-stage">保存</a>
-                    </div>
-                </div>
-            </li>;
-        var xml2 ;
-        if(this.state.list) {
-            xml2 = this.state.list.map(function(stage) {
-                var stages;
-                if(that.state.stageItems && that.state.stageItems[stage._id]){
-                    stages = that.state.stageItems[stage._id].map(function(item){
-                        return (
-                            <CardItem data={item}></CardItem>
-                        )
-                    })
-                }
-                return(
-                    <li className="scrum-stage toggler-parent" key={stage._id}>
-                        <header className="scrum-stage-header">
-                            <div className="stage-name">
-                                <span className="icon icon-tick"></span>{stage.name}
-                                <span className="task-count"> · {stage.totalCount}</span>
-
-                            <span className="icon icon-chevron-right">
-                                <i className="material-icons">keyboard_arrow_right</i>
-                            </span>
-                            </div>
-                            <a className="stage-menu-toggler icon icon-clock2 hinted" data-title="添加或编辑任务阶段">
-                                <i className="material-icons">play_circle_outline</i>
-                            </a>
-                        </header>
-                        <div className="scrum-stage-wrap hidden-creator">
-                            <section className="scrum-stage-content thin-scroll ui-sortable">
-                                <ul className="scrum-stage-tasks"></ul>
-                                <div className="task-creator-wrap" ></div>
-                                <ul className="scrum-stage-tasks-done">
-                                    {stages}
-                                </ul>
-                            </section>
-                            <div className="task-creator-handler-wrap">
-                                <a className="task-creator-handler link-add-handler">
-                                    <i className="material-icons">control_point</i>添加任务
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                )
-            });
-        }
-
-        return (
-            <Droppable
-                types={['fruit']} // <= allowed drop types
-                onDrop={this.onDrop}>
-                <ul className="board-scrum-stages horizontal-scroll ui-sortable sortable">
-                    {xml2}
-                    {xml}
-                </ul>
-            </Droppable>
-        )
-    },
-    onDrop: function(data) {
-        console.log(data)
     }
 });
 

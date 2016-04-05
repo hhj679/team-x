@@ -3,7 +3,22 @@ import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MainBar from '../components/navbar/navbar.react';
 
+import SimpleList from '../components/card/drag'
+
 import './style.css'
+
+const SortableList = (props) => {
+    return (
+        <div>
+            <SimpleList
+                items2={['Apple', 'Banaba', 'Cherry', 'Grape']}
+            />
+            <SimpleList
+                items2={['Lemon', 'Orange', 'Pear', 'Peach']}
+            />
+        </div>
+    );
+};
 
 var App = React.createClass({
     render: function () {
